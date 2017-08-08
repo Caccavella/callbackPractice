@@ -36,7 +36,7 @@ first(names, function(firstName){
 
 // 2. Write a function called last which returns the last item of the array using a callback function.
 function last(namesArray, callback) {
- callback(names.length - 1);
+ callback(names[names.length - 1]);
 }
 
  //Code Here
@@ -78,8 +78,23 @@ contains(names, 'Colt', function(result){
 // 5. Write a function called uniq that takes the names array and removes all duplicates and returns 
 // the callback function with the array of unique names.
 
-    //Code Here
 
+ function uniq(noDupeNames, cb) {
+    var seen = {};
+    var out = [];
+    var len = noDupeNames.length;
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+         var item = noDupeNames[i];
+         if(seen[item] !== 1) {
+               seen[item] = 1;
+               out[j++] = item;
+         }
+    }
+    cb (out);
+
+ }   //Code Here
+//var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
@@ -88,7 +103,10 @@ uniq(names, function(uniqArr){
 // 6. Write a function called each that takes in an array of names. For each item, use a callback 
 // function to return the indices and item.
 
-    //Code Here 
+function each(position, callback) {
+ callback(names[]);
+
+}    //Code Here 
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -99,7 +117,10 @@ each(names, function(item, indice){
 // 7. Write a function called getUserById that looks at the array of user objects (users) and searches for a user by ID 
 // and returns that user.
 
- //Code Here
+function getUserById(eachUser, cb) {
+    
+  }
+} //Code Here
 
 var users = [
   {
