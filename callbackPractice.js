@@ -64,12 +64,13 @@ multiply(4, 3, function(answer){
 // If it does, return true using the callback, if not return false.
 
 function contains(name, cb){
-  if (names[name]){
-    cb(names[name])    
-  } else {
-    return 'false':
-  }
-}  //Code Here 
+ if (names.indexOf[name] !== -1) {
+   return 'true';
+ } else {
+   return 'false';
+ }
+
+ } //Code Here 
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -126,11 +127,13 @@ each(names, function(item, indice){
 // 7. Write a function called getUserById that looks at the array of user objects (users) and searches for a user by ID 
 // and returns that user.
 
-function getUserById(eachUser, cb) {
-    
-  }
-} //Code Here
 
+function getUserById(eachUser, value, cb) {
+  for (var i = 0; i < users.length; i++) {
+   if (value in users[i=2]) {
+  } cb(eachUser[i]);
+} //Code Here
+}
 var users = [
   {
     id: '12d',
