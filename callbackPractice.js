@@ -63,7 +63,13 @@ multiply(4, 3, function(answer){
 // 4. Write a function called contains that checks if a name exists in an array. 
 // If it does, return true using the callback, if not return false.
 
-  //Code Here 
+function contains(name, cb){
+  if (names[name]){
+    cb(names[name])    
+  } else {
+    return 'false':
+  }
+}  //Code Here 
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -103,15 +109,18 @@ uniq(names, function(uniqArr){
 // 6. Write a function called each that takes in an array of names. For each item, use a callback 
 // function to return the indices and item.
 
-function each(position, callback) {
- callback(names[]);
 
+//var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+function each(indice, cb) {
+  for (var i = 0; i < names.length; i++) {
+     cb(names[i], [i]);
+  }
 }    //Code Here 
 
 each(names, function(item, indice){
-  console.log('The item in the ' + indice + ' position is ' + item)
+  console.log('The item in the ' + indice + ' position is ' + item);
 });
-
 
 
 // 7. Write a function called getUserById that looks at the array of user objects (users) and searches for a user by ID 
